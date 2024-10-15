@@ -1,5 +1,5 @@
 # web
-Jsme otevření a transparenti proto zde je kod od stránky - https://gunsfunxd.fun
+Jsme otevření a transparentní proto zde je tu kod od stránky - https://gunsfunxd.fun
 
 
-Github web (kdyby hlavní nefungoval) - https://ihosprojects.github.io/web/
+Github web (kdyby hlavní nefungoval, nebo kdyby doména vypršela.) - https://ihosprojects.github.io/web/
