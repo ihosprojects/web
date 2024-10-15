@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9903253409299625"
+     crossorigin="anonymous"></script>
+     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velké věci již brzy!</title>
+    <style>
+        /* Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        /* Background Animation */
+        body {
+            background: linear-gradient(-45deg, #1a202c, #2b6cb0, #3182ce, #1a202c);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Central Container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInDown 1.5s ease-out;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            font-size: 2rem;
+            margin-bottom: 50px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Velké věci již brzy! 🚀</h1>
+        <p>Připravujeme něco velkého. Sledujte časovač do neděle!</p>
+
+        <div class="countdown" id="countdown"></div>
+    </div>
+
+    <footer>
+        &copy; 2024 ihosfunxd.fun
+    </footer>
+
+    <script>
+        // Countdown Timer Script
+        function countdown() {
+            const today = new Date();
+            let sunday = new Date();
+
+            // Set the countdown to the upcoming Sunday at midnight
+            sunday.setDate(today.getDate() + (7 - today.getDay()));
+            sunday.setHours(0, 0, 0, 0);
+
+            const distance = sunday - today;
+
+            if (distance >= 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s `;
+            } else {
+                document.getElementById("countdown").innerHTML = "Brzy začínáme!";
+            }
+
+            // Update the countdown every second
+            setTimeout(countdown, 1000);
+        }
+
+        // Run countdown on page load
+        countdown();
+    </script>
+</body>
+</html>
